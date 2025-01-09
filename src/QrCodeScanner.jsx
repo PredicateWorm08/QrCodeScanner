@@ -1,27 +1,28 @@
 import { Scanner } from '@yudiel/react-qr-scanner';
+import { useState } from 'react';
+import styles from './qrCodeScanner.module.css';
 
 export const QrCodeScanner = () => {
-  const scanHandler = (result) => {
-    console.log(result);
-}
-  
-const settings = {
-  audio: false,
-  finder: false,
-}
+  const [scanned, setScanned] = useState(null);
 
-const styleSettings = {
-  container: { width: 600, height: 200 }
+  const scanHandler = (result) => {
+    setScanned(result[0].rawValue);
 }
 
   return (
-    <div>
+    <div className={styles.container}>
       <Scanner 
-      allowMultiple
-      onScan={scanHandler}
-      components={settings}
-      styles={styleSettings}
+        allowMultiple
+        onScan={scanHandler}
+        components={{
+          audio: false,
+          finder: false,
+        }}
+        styles={{
+          container: { width: 300 }
+        }}
       />
+      <p className={styles.result}>{scanned}</p>
     </div>
   )
 }
