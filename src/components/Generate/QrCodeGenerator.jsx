@@ -31,7 +31,7 @@ export const QrCodeGenerator = () => {
         <input 
           type="text" 
           value={value}
-          placeholder="Введите текст..." 
+          placeholder="Текст или ссылка..." 
           onChange={onChangeHandler} 
           className={styles.input}
           />

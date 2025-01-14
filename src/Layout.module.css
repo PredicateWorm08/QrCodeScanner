@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'ScratchedCarPaint';
+    src: url('/fonts/ScratchedCarPaint.ttf') format('truetype'); /* Указан правильный путь и формат */
+    font-weight: 400;
+    font-style: normal;
+}
+
 .container {
     position: fixed;
     top: 0;
@@ -9,21 +16,30 @@
     background-position: center;
     background-attachment: fixed;
     z-index: -1; 
-  }
+    display: flex; 
+    justify-content: flex-start; 
+    align-items: center;
+}
 
 .menu {
-    width: 400px;
-    margin: 80px 0 0 180px;
+    width: 500px;
+    margin-left: 120px;
+    margin-right: 10px;
+    
+    
 
     @media (max-width: 767px) {
         width: 350px; 
         font-size: 12px;
-        margin: 80px auto 0 auto;
+        margin: 0 auto; /* Центрирование на мобильных */
     }
 }
 
 .title {
-    color: #FFFFFF;
+    color:rgb(255, 154, 4); 
+    text-shadow: 5px 20px 5px black;
     text-align: center;
+    font-size: 90px;
     margin: 0 0 40px 0;
+    font-family: 'ScratchedCarPaint', serif;
 }
